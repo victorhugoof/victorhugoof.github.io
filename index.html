@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<title>Retrato da Moda</title>
+	<base href="./">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="favicon.ico" rel="icon" type="image/x-icon">
+	<style>
+		@-webkit-keyframes giro {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(359deg);
+				transform: rotate(359deg);
+			}
+		}
+
+		@keyframes giro {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(359deg);
+				transform: rotate(359deg);
+			}
+		}
+
+		.loader-outer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column !important;
+			height: 100%;
+			width: 100%;
+			z-index: 999;
+			position: absolute;
+			background: rgba(255, 255, 255, 0.3);
+		}
+
+		.loader-outer img {
+			width: 90px;
+			-webkit-animation: giro 2s infinite linear;
+			animation: giro 2s infinite linear;
+		}
+
+		.loader-outer.hide {
+			display: none;
+		}
+	</style>
+
+<link rel="stylesheet" href="styles.2a011eaea2eaedfab595.css"></head>
+<body>
+<!--d-flex flex-column justify-content-center align-items-center h-100-->
+<div class="loader-outer" id="preloader">
+	<div class="loader-container">
+		<img src="./assets/images/logo.svg" width="90px">
+	</div>
+</div>
+<app-root id="root"></app-root>
+<script>
+	function compartilharLocalStorageEntreAbas() {
+		const sessionStorage_transfer = function (event) {
+			event = event || window.event;
+			if (!event.newValue) return;
+
+			if (event.key === 'getSessionStorage') {
+				localStorage.setItem('sessionStorage', JSON.stringify(sessionStorage));
+				localStorage.removeItem('sessionStorage');
+			} else if (event.key === 'sessionStorage' && !sessionStorage.length) {
+				const data = JSON.parse(event.newValue);
+				Object.keys(data).forEach(key => sessionStorage.setItem(key, data[key]));
+			}
+		};
+
+		if (window.addEventListener) {
+			window.addEventListener("storage", sessionStorage_transfer, false);
+		} else {
+			window.attachEvent("onstorage", sessionStorage_transfer);
+		}
+
+		if (!sessionStorage.length) {
+			localStorage.setItem('getSessionStorage', 'triggerConvcard');
+			localStorage.removeItem('getSessionStorage', 'triggerConvcard');
+		}
+	}
+
+	compartilharLocalStorageEntreAbas();
+</script>
+<script src="runtime-es2015.0811dcefd377500b5b1a.js" type="module"></script><script src="runtime-es5.0811dcefd377500b5b1a.js" nomodule defer></script><script src="polyfills-es5.1d087d4db6b105875851.js" nomodule defer></script><script src="polyfills-es2015.ca64e4516afbb1b890d5.js" type="module"></script><script src="main-es2015.138848d694cb612ca3b9.js" type="module"></script><script src="main-es5.138848d694cb612ca3b9.js" nomodule defer></script></body>
+</html>
