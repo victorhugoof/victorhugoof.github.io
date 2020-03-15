@@ -9,9 +9,6 @@
 >
  <defs>
   <style type="text/css">
-   <
-   !
-   [CDATA[
    .str0 {
 	   stroke: #373435;
 	   stroke-width: 8.54;
@@ -43,10 +40,6 @@
 	   fill: #DC6538;
 	   fill-rule: nonzero
    }
-
-   ]
-   ]
-   >
   </style>
 	 <mask id="id0">
   <linearGradient gradientUnits="userSpaceOnUse" id="id1" x1="43.92" x2="65.51" y1="159.68" y2="-86.11">
